@@ -7,10 +7,15 @@ import com.wt.homepage.entity.CourseInfosRequest;
 import com.wt.homepage.entity.HomepageCourse;
 import com.wt.homepage.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+@Service
 public class CourseServiceImpl implements CourseService {
   @Autowired
   HomePageCourseDao homePageCourseDao;
@@ -22,8 +27,12 @@ public class CourseServiceImpl implements CourseService {
   }
 
   @Override
-  public List<CourseInfo> getCourseInfos(CourseInfosRequest param) {
-    return null;
+  public List<CourseInfo> getCourseInfos(CourseInfosRequest request) {
+    if (CollectionUtils.isEmpty(request.getIds())) {
+      return Collections.EMPTY_LIST;
+    }
+    List<HomepageCourse> list = homePageCourseDao.findAllById(request.getIds());
+    return list.stream().map(this::buildCourseInfo).collect(Collectors.toList());
   }
 
   private CourseInfo buildCourseInfo(HomepageCourse course) {
