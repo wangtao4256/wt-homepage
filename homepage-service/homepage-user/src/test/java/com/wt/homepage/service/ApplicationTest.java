@@ -2,6 +2,7 @@ package com.wt.homepage.service;
 
 import com.wt.homepage.ApplicationTestMapper;
 import com.wt.homepage.dao.HomePageMapper;
+import com.wt.homepage.entity.HomePageUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,15 @@ public class ApplicationTest {
   HomePageMapper homePageMapper;
 
   @Test
-  public void test() {
+  public void getAll() {
     System.out.println(homePageMapper.getAll());
+  }
+
+  @Test
+  public void udpate() {
+    HomePageUser homePageUser = new HomePageUser();
+    homePageUser.setId(1l);
+    homePageUser.setUsername("wangtao");
+    homePageMapper.update(homePageUser);
   }
 }
