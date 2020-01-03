@@ -10,42 +10,42 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+//@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
-@Table(name = "homepage_user")
+//@EntityListeners(AuditingEntityListener.class)
+//@Table(name = "homepage_user")
 public class HomePageUser {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
+  //  @Id
+  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  //  @Column(name = "id", nullable = false)
   private Long id;
 
-  @Basic
-  @Column(name = "username", nullable = false)
+  //  @Basic
+  //  @Column(name = "username", nullable = false)
   private String username;
   /**
    * 用户邮箱
    */
-  @Basic
-  @Column(name = "email", nullable = false)
+  //  @Basic
+  //  @Column(name = "email", nullable = false)
   private String email;
 
   /**
    * 创建时间
    */
-  @Basic
-  @CreatedDate
-  @Column(name = "create_time", nullable = false)
+  //  @Basic
+  //  @CreatedDate
+  //  @Column(name = "create_time", nullable = false)
   private Date createTime;
 
   /**
    * 更新时间
    */
-  @Basic
-  @LastModifiedDate
-  @Column(name = "update_time", nullable = false)
+  //  @Basic
+  //  @LastModifiedDate
+  //  @Column(name = "update_time", nullable = false)
   private Date updateTime;
 
   public HomePageUser(String username, String email) {
