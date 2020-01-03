@@ -15,19 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest(classes = { ApplicationTestMapper.class }, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class ApplicationTest {
   @Autowired
-  HomePageMapper homePageMapper;
+  HomePageUserService homePageUserService;
 
   @Test
-  public void getAll() {
-    System.out.println(homePageMapper.getAll());
-  }
-
-  @Test
-  @Transactional
   public void udpate() {
     HomePageUser home = new HomePageUser();
     home.setId(1l);
     home.setUsername("sasdasdada");
-    homePageMapper.update(home);
+    homePageUserService.updateHomePageUser(home);
+    int i = 1 / 0;
   }
 }
