@@ -1,2 +1,15 @@
 # Project exclude paths
 /homepage-eureka/target/
+/homepage-service/target/
+/homepage-zuul/target/
+/homepage-service/homepage-course/target/
+/homepage-service/homepage-user/target/
+*.class
+*.jar
+*.log
+/logs/*
+.gitignore
+.classpath
+.settings*
+.project
+/.idea/*
