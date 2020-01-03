@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { ApplicationTestMapper.class }, webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -21,10 +23,11 @@ public class ApplicationTest {
   }
 
   @Test
+  @Transactional
   public void udpate() {
-    HomePageUser homePageUser = new HomePageUser();
-    homePageUser.setId(1l);
-    homePageUser.setUsername("wangtao");
-    homePageMapper.update(homePageUser);
+    HomePageUser home = new HomePageUser();
+    home.setId(1l);
+    home.setUsername("sasdasdada");
+    homePageMapper.update(home);
   }
 }
