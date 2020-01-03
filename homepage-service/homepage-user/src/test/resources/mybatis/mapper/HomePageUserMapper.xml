@@ -1,0 +1,56 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wt.homepage.dao.HomePageMapper">
+    <resultMap id="BaseResultMap" type="com.wt.homepage.entity.HomePageUser">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="update_time" property="updateTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+            id, username, email, create_time, update_time
+        </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM homepage_user
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM homepage_user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.wt.homepage.entity.HomePageUser">
+            INSERT INTO
+            users
+            (userName,passWord,user_sex)
+            VALUES
+            (#{userName}, #{passWord}, #{userSex})
+        </insert>
+
+    <update id="update" parameterType="com.wt.homepage.entity.HomePageUser">
+        UPDATE
+        homepage_user
+        SET
+        <if test="userName != null">userName = #{userName},</if>
+        <if test="passWord != null">passWord = #{passWord},</if>
+        nick_name = #{nickName}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+            DELETE FROM
+            homepage_user
+            WHERE
+            id =#{id}
+        </delete>
+</mapper>
