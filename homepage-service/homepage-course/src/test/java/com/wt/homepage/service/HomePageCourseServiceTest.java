@@ -23,7 +23,7 @@ public class HomePageCourseServiceTest {
   @Autowired
   private CourseService courseService;
 
-  //  @Test
+//  @Test
   public void testCreateCourseInfo() {
     HomepageCourse homepageCourse = new HomepageCourse("JDK11&12 新特性解读", 0, "https:/www.imooc.com", "解读JDK11&12的新版本特性");
     HomepageCourse homepageCourse1 = new HomepageCourse("SpringCloud广告系统实现", 1, "https:/www.imooc.com",

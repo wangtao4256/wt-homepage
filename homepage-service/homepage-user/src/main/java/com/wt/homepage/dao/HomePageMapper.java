@@ -1,9 +1,13 @@
 package com.wt.homepage.dao;
 
 import com.wt.homepage.entity.HomePageUser;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Mapper
 public interface HomePageMapper {
   List<HomePageUser> getAll();
 
