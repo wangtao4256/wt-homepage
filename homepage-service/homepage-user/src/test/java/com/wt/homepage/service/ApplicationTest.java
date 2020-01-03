@@ -12,17 +12,14 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { ApplicationTestMapper.class }, webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest(classes = {ApplicationTestMapper.class}, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class ApplicationTest {
-  @Autowired
-  HomePageUserService homePageUserService;
+    @Autowired
+    HomePageUserService homePageUserService;
 
-  @Test
-  public void udpate() {
-    HomePageUser home = new HomePageUser();
-    home.setId(1l);
-    home.setUsername("sasdasdada");
-    homePageUserService.updateHomePageUser(home);
-    int i = 1 / 0;
-  }
+    @Test
+    public void udpate() {
+        homePageUserService.updateHomePageUser();
+        int i = 1 / 0;
+    }
 }

@@ -4,5 +4,5 @@ import com.wt.homepage.entity.HomePageUser;
 
 public interface HomePageUserService {
 
-  void updateHomePageUser(HomePageUser homePageUser);
+  void updateHomePageUser();
 }
