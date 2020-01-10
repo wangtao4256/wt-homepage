@@ -2,6 +2,7 @@ package com.wt.homepage.dao;
 
 import com.wt.homepage.entity.HomePageUser;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
@@ -20,4 +21,5 @@ public interface HomePageMapper {
   void update(HomePageUser user);
 
   void delete(Long id);
+
 }
