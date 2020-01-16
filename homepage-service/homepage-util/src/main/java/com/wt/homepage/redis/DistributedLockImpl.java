@@ -83,9 +83,8 @@ public class RedisDistributedLock implements DistributedLock {
     //随机生成一个唯一标示的value
     String requireToken = UUID.randomUUID().toString();
     while (System.currentTimeMillis() < end) {
-      String result = redis.set(lockKey, requireToken, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);
     }
-
+    return null;
   }
 
   @Override
