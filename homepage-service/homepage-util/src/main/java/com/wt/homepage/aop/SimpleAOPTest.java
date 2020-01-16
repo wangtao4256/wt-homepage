@@ -1,7 +1,5 @@
 package com.wt.homepage.aop;
 
-import org.junit.jupiter.api.DynamicTest;
-
 public class SimpleAOPTest {
 
   public void getProxy() throws Exception {
@@ -13,7 +11,7 @@ public class SimpleAOPTest {
     Advice beforeAdvice = new BeforeAdvice(helloServiceImpl, logTask);
 
     // 3. 为目标对象生成代理
-    HelloService helloServiceImplProxy = (HelloService) SimpleAOP.getProxy(helloServiceImpl, beforeAdvice);
+    HelloService helloServiceImplProxy = (HelloService) SimpleAop.getProxy(helloServiceImpl, beforeAdvice);
 
     helloServiceImplProxy.sayHelloWorld();
   }

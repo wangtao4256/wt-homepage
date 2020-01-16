@@ -8,8 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>homepage-common</artifactId>
+    <artifactId>homepage-util</artifactId>
     <groupId>com.wt.homepage</groupId>
+    <properties>
+        <redis.client.version>3.4.9</redis.client.version>
+    </properties>
 
     <dependencies>
         <!-- JSON 处理工具 -->
@@ -38,7 +41,18 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
-
+        <!--redis包 -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${redis.client.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.redisson/redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redisson.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -13,6 +13,6 @@ public class UserInfo {
   private String email;
 
   public static UserInfo invalid() {
-    return new UserInfo(-1l, "", "");
+    return new UserInfo(-1L, "", "");
   }
 }

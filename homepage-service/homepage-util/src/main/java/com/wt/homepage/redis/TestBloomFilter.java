@@ -1,4 +1,4 @@
-package com.wt.homepage.Redis;
+package com.wt.homepage.redis;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;

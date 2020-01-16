@@ -21,7 +21,7 @@ public class HomePageController {
   @SuppressWarnings("all")
   public void getHomePage() {
     HomePageUser home = new HomePageUser();
-    home.setId(1l);
+    home.setId(1L);
     home.setUsername("aaaaa");
     homePageMapper.update(home);
     int a = 1 / 0;

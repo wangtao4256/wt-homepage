@@ -17,6 +17,6 @@ public class CourseInfo {
   private String courseIntro;
 
   public static CourseInfo invalid() {
-    return new CourseInfo(-1l, "", "", "", "");
+    return new CourseInfo(-1L, "", "", "", "");
   }
 }
