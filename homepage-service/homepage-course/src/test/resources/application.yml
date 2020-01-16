@@ -14,9 +14,9 @@ spring:
       hibernate.format_sql: true
     open-in-view: false
   datasource:
-    url: jdbc:mysql://172.17.1.56:3306/test_wangta?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: xddev
-    password: xddev@xiaodou
+    url: jdbc:mysql://localhost:3306/imooc_homepage_sc?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: jupiter123
     driver-class-name: com.mysql.cj.jdbc.Driver
     tomcat:
       max-active: 4

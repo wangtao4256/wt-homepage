@@ -12,4 +12,5 @@
 .classpath
 .settings*
 .project
+*.iml
 /.idea/*
