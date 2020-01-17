@@ -11,7 +11,7 @@
     <artifactId>homepage-util</artifactId>
     <groupId>com.wt.homepage</groupId>
     <properties>
-        <redis.client.version>3.4.9</redis.client.version>
+        <redis.client.version>3.0.1</redis.client.version>
     </properties>
 
     <dependencies>
@@ -51,8 +51,9 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>${redisson.version}</version>
+            <version>3.10.0</version>
         </dependency>
+
     </dependencies>
 
 </project>

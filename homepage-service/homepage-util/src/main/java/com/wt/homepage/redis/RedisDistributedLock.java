@@ -2,8 +2,8 @@ package com.wt.homepage.redis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties.Jedis;
 import org.springframework.data.redis.core.RedisTemplate;
+import redis.clients.jedis.Jedis;
 
 import java.util.UUID;
 
@@ -23,7 +23,7 @@ public class RedisDistributedLock implements DistributedLock {
   /**
    * redis客户端
    */
-  private RedisUtil redis;
+  private Jedis jedis;
 
   /**
    * 分布式锁的键值
@@ -46,8 +46,8 @@ public class RedisDistributedLock implements DistributedLock {
    * @author tao.wang
    * @date 2020/1/16
    */
-  public RedisDistributedLock(RedisUtil redis, String lockKey) {
-    this.redis = redis;
+  public RedisDistributedLock(Jedis jedis, String lockKey) {
+    this.jedis = jedis;
     this.lockKey = lockKey;
   }
 
@@ -57,8 +57,8 @@ public class RedisDistributedLock implements DistributedLock {
    * @author tao.wang
    * @date 2020/1/16
    */
-  public RedisDistributedLock(RedisUtil redis, String lockKey, int acquireTimeout) {
-    this.redis = redis;
+  public RedisDistributedLock(Jedis jedis, String lockKey, int acquireTimeout) {
+    this.jedis = jedis;
     this.lockKey = lockKey;
     this.acquireTimeout = acquireTimeout;
   }
@@ -69,8 +69,8 @@ public class RedisDistributedLock implements DistributedLock {
    * @author tao.wang
    * @date 2020/1/16
    */
-  public RedisDistributedLock(RedisUtil redis, String lockKey, int acquireTimeout, int expireTime) {
-    this.redis = redis;
+  public RedisDistributedLock(Jedis jedis, String lockKey, int acquireTimeout, int expireTime) {
+    this.jedis = jedis;
     this.lockKey = lockKey;
     this.acquireTimeout = acquireTimeout;
     this.expireTime = expireTime;
