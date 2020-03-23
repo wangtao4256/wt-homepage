@@ -12,8 +12,12 @@
     <version>1.0.1</version>
     <groupId>com.wt.homepage</groupId>
     <properties>
+<<<<<<< HEAD
         <redis.client.version>2.9.0</redis.client.version>
         <redisson.version>3.12.0</redisson.version>
+=======
+        <redis.client.version>3.0.1</redis.client.version>
+>>>>>>> 831154593cd144323934dae1a05b4d536b07cd9e
     </properties>
 
     <dependencies>
@@ -53,8 +57,9 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>${redisson.version}</version>
+            <version>3.10.0</version>
         </dependency>
+
     </dependencies>
 
 </project>

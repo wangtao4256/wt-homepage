@@ -41,7 +41,11 @@
         <dependency>
             <groupId>com.wt.homepage</groupId>
             <artifactId>homepage-util</artifactId>
+<<<<<<< HEAD
             <version>1.0.1</version>
+=======
+            <version>1.0-SNAPSHOT</version>
+>>>>>>> 831154593cd144323934dae1a05b4d536b07cd9e
         </dependency>
     </dependencies>
 
