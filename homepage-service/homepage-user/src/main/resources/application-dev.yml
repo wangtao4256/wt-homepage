@@ -16,9 +16,9 @@ spring:
   #      hibernate.format_sql: true
   #    open-in-view: false
   datasource:
-    url: jdbc:mysql://172.17.1.56:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: xddev
-    password: xddev@xiaodou
+    url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: jupiter123
     driver-class-name: com.mysql.cj.jdbc.Driver
     tomcat:
       max-active: 4
@@ -36,3 +36,54 @@ feign:
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+dataSources:
+  ds0: !!org.apache.commons.dbcp.BasicDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ds0
+    username: root
+    password:
+  ds1: !!org.apache.commons.dbcp.BasicDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ds1
+    username: root
+    password:
+
+shardingRule:
+  tables:
+    t_order:
+      actualDataNodes: ds${0..1}.t_order${0..1}
+      databaseStrategy:
+        inline:
+          shardingColumn: user_id
+          algorithmExpression: ds${user_id % 2}
+      tableStrategy:
+        inline:
+          shardingColumn: order_id
+          algorithmExpression: t_order${order_id % 2}
+      keyGenerator:
+        type: SNOWFLAKE
+        column: order_id
+    t_order_item:
+      actualDataNodes: ds${0..1}.t_order_item${0..1}
+      databaseStrategy:
+        inline:
+          shardingColumn: user_id
+          algorithmExpression: ds${user_id % 2}
+      tableStrategy:
+        inline:
+          shardingColumn: order_id
+          algorithmExpression: t_order_item${order_id % 2}
+  bindingTables:
+    - t_order,t_order_item
+  broadcastTables:
+    - t_config
+
+  defaultDataSourceName: ds0
+  defaultTableStrategy:
+    none:
+  defaultKeyGenerator:
+    type: SNOWFLAKE
+    column: order_id
+
+props:
+  sql.show: true

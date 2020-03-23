@@ -17,10 +17,10 @@ public class HomePageController {
     @Autowired
     HomePageUserService homePageUserService;
 
-    @RequestMapping("/test")
+    @RequestMapping("/add/user")
     @ResponseBody
-    public void getHomePage() {
-        homePageUserService.updateHomePageUser();
-        int a = 1 / 0;
+    public void insertHomePageUser() {
+        HomePageUser user = new HomePageUser("wangtao", "wangtao_4256@163.com");
+        homePageUserService.insertHomePageUser(user);
     }
 }

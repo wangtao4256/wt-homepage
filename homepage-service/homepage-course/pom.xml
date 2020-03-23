@@ -40,8 +40,8 @@
         <!-- 通用模块 -->
         <dependency>
             <groupId>com.wt.homepage</groupId>
-            <artifactId>homepage-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>homepage-util</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 

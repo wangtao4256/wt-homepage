@@ -29,4 +29,9 @@ public class HomePageUserServiceimpl implements HomePageUserService {
         homePageUser2.setUsername("homeuser2");
         homePageMapper.update(homePageUser2);
     }
+
+    @Override
+    public void insertHomePageUser(HomePageUser user) {
+        homePageMapper.insert(user);
+    }
 }

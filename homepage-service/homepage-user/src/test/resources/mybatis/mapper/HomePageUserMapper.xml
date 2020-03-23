@@ -29,12 +29,16 @@
     </select>
 
     <insert id="insert" parameterType="com.wt.homepage.entity.HomePageUser">
-            INSERT INTO
-            users
-            (username,password,user_sex)
-            VALUES
-            (#{username}, #{password}, #{userSex})
-        </insert>
+        INSERT INTO homepage_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">username,</if>
+            <if test="email != null">email,</if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="username != null">#{username},</if>
+            <if test="email != null">#{email},</if>
+        </trim>
+    </insert>
 
     <update id="update" parameterType="com.wt.homepage.entity.HomePageUser">
         UPDATE
