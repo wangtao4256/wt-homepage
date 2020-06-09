@@ -1,12 +1,5 @@
 package com.wt.homepage.redis;
 
-import lombok.extern.slf4j.Slf4j;
-import redis.clients.jedis.Jedis;
-<<<<<<< HEAD
-=======
-import redis.clients.jedis.params.SetParams;
->>>>>>> 831154593cd144323934dae1a05b4d536b07cd9e
-
 import java.util.Collections;
 import java.util.UUID;
 
@@ -18,7 +11,6 @@ import java.util.UUID;
  */
 @Slf4j
 public class RedisDistributedLock implements DistributedLock {
-<<<<<<< HEAD
     private static final String LOCK_SUCCESS = "OK";
     private static final Long RELEASE_SUCCESS = 1L;
     private static final String SET_IF_NOT_EXIST = "NX";
@@ -239,5 +231,4 @@ public class RedisDistributedLock implements DistributedLock {
     log.info("release lock failed,requestToken:{},result:{}", identifier, result);
     return false;
   }
->>>>>>> 831154593cd144323934dae1a05b4d536b07cd9e
 }
